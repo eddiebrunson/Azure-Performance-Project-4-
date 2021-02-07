@@ -19,7 +19,7 @@ from opencensus.tags import tag_map as tag_map_module
 from opencensus.ext.azure.trace_exporter import AzureExporter
 from opencensus.trace.samplers import ProbabilitySampler
 from opencensus.trace.tracer import Tracer
-from opencensus.ext.flask.flask_middleware import FlaskMiddle 
+from opencensus.ext.flask.flask_middleware import FlaskMiddleware
 
 # Metrics
 exporter = metrics_exporter.new_metrics_exporter(
