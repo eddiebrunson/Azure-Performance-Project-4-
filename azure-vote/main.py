@@ -34,6 +34,10 @@ tracer = Tracer(
 )
 app = Flask(__name__)
 
+# Logging
+logger = logging.getLogger(__name__)
+logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=58b12164-639f-487c-bac2-1623845c522a'))
+
 # Requests
 middleware = FlaskMiddleware(
     app,
