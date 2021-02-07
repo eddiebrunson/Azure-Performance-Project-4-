@@ -9,6 +9,7 @@ from datetime import datetime
 
 # App Insights
 # TODO: Import required libraries for App Insights
+from applicationinsights import TelemetryClient
 from opencensus.ext.azure.log_exporter import AzureLogHandler
 from opencensus.ext.azure import metrics_exporter
 from opencensus.stats import aggregation as aggregation_module
@@ -34,7 +35,7 @@ tracer = Tracer(
         connection_string='InstrumentationKey=58b12164-639f-487c-bac2-1623845c522a'),
     sampler=ProbabilitySampler(1.0),
 )
-app = Flask(__name__)
+tc = TelemetryClient('58b12164-639f-487c-bac2-1623845c522a')
 
 # Logging
 logger = logging.getLogger(__name__)
