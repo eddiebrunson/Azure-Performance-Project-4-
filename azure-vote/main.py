@@ -35,7 +35,7 @@ tracer = Tracer(
         connection_string='InstrumentationKey=58b12164-639f-487c-bac2-1623845c522a'),
     sampler=ProbabilitySampler(1.0),
 )
-tc = TelemetryClient('58b12164-639f-487c-bac2-1623845c522a')
+
 
 # Logging
 logger = logging.getLogger(__name__)
