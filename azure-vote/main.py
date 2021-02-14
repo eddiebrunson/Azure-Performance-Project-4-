@@ -27,25 +27,25 @@ app = Flask(__name__)
 # Metrics
 exporter = metrics_exporter.new_metrics_exporter(
   enable_standard_metrics=True,
-  connection_string='InstrumentationKey=58b12164-639f-487c-bac2-1623845c522a')
+  connection_string='InstrumentationKey=a83d18ee-b73e-4f44-89f4-56b30fc45547')
 
 # Tracing
 tracer = Tracer(
     exporter=AzureExporter(
-        connection_string='InstrumentationKey=58b12164-639f-487c-bac2-1623845c522a'),
+        connection_string='InstrumentationKey=a83d18ee-b73e-4f44-89f4-56b30fc45547'),
     sampler=ProbabilitySampler(1.0),
 )
 
 
 # Logging
 logger = logging.getLogger(__name__)
-logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=58b12164-639f-487c-bac2-1623845c522a'))
+logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=a83d18ee-b73e-4f44-89f4-56b30fc45547'))
 logger.setLevel(logging.INFO)
 
 # Requests
 middleware = FlaskMiddleware(
     app,
-    exporter=AzureExporter(connection_string="InstrumentationKey=58b12164-639f-487c-bac2-1623845c522a"),
+    exporter=AzureExporter(connection_string="InstrumentationKey=a83d18ee-b73e-4f44-89f4-56b30fc45547"),
     sampler=ProbabilitySampler(rate=1.0),
 )
 # Load configurations from environment or config file
